@@ -1,0 +1,27 @@
+{%extends 'main.html'%}
+{%load static%}
+
+{%block content%}
+<h1>Welcome</h1>
+<h1>Projects</h1>
+<div class="row">
+  {% for room in room %}
+  <div class="col-md-4">
+  <div class="card" style="width: 18rem; background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  color: hsl(200, 15%, 8%);
+  border-radius: 5px;
+  overflow: hidden; margin:3rem;">
+    <img src="{{room.image_url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{room.price}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+</div>
+{%endblock%}
